@@ -1,0 +1,6 @@
+json
+cv2
+django
+os
+io
+rest-framework
