@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sunny-mountain-331720",
+  "private_key_id": "18558b9b3dda5aa3b25ab94be27e0ee9f0544701",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDE/TlUMBXPySU6\nLVrMmLn5Asjg7oKnKFWq77meCl3Th/nDYTcoqBAYsHwYVCstsnYCUqnNCIJkIMN6\nhinq/FBVufeaHrtRCNC8VvIpdQjacEbVt9oGiaJxHpq8d6YicsoP2aCu+KWEM61T\nir7kqjEOJZPtkjWG7z4WITNswo377qnaYJ0QLAtaGWvYFHszOKIJZPHPOuSHXay7\nhsM2au7W33o82lfdaEFnSZcUbNzTRzLSIb2vPeQI/hUh3r8aIYEgr5dhS9bdwZJZ\n4ngvZUtZXlcrzcjQLkJdGyZaR+jWtfRF6WRrVCnubx2Ia9j6y56qm0wbvS4EPicP\nN1YGMX0zAgMBAAECggEAAnfX5Oib/mtbO1GTF5oYaNJfYH1NnJKwM9Qm1dNawkPO\nFYYBs0Bf0afoKVWbkwXeRECEfqk6CHnuv3mnh1UzLUdDBWa6Gwiu6JSq1hRoDFMB\nRpn4PuRS+mIgHYhFLmo/PosyG7z84AxNcS8fhD5WdHnr7F1/m6i8H61kSGw8sB4b\n+wYBZAEUOlsEi0smla26e66g5/K1omJCL6MrZoCardDP8o7ZgSNqrFqgieNoFJzc\nLGYhcZzH/mNCM9ev/EZpHkdtPybyWU7SjtWAlC8BcwDIWciai1btbmZNs3wL15ZN\nFSJQvg5hSlYECAim7y5vYX3B815ZrFPvnA5nDH7XsQKBgQDhU1j2rwYv3FnHZCNo\nd8DsBjlD9rVgcxiWNielTyJWz7HKR2Q/sh568am57/GYU8g1L78mqcsnGtmkd4XC\nPliywh8tIyu+jjMbAy8qCxqrJ2X46eBjNADQMEAHTzt+3sowYa3LXkI3rCGfXzwQ\nYVH9+bqFkSq4OozLg9W9vKNIaQKBgQDfzlhZ0/WWFOtSF3axFB5vAo3I2hNVI9RC\nbdY4QZxRms0yiPKNUCR8D5V8AJqpW663PYcy0TWhW/M/KtQq3af9ZaXd5JwKrhek\nhuFhRzFyHR0WcAUyVQgFyYGyWFdCnQc4ZbLgNFsVBAVMY0tVLIiQBizVPO6gGeAu\n7Etn9D/FOwKBgQDW+8/45XtwtLvQG0IRTZj7WODQcJYTZR1DTH49IiiwTU/joIQM\npeShBuwaZM3Mubtey6SEviH/uIWJfyRW9Wdpfv+B8HmvQTuPfVVFtvyF6nxHptWZ\nsSdJe4/LqZQpc2XUDY5laBSjy4704UeMlV5GhTuqbpwk1HA7SRjpBA+CaQKBgQCQ\n7ycGHR6Yb7mo8ur5aAcBasz4+ki0xTwrPMgSrGKX8kDabhdtbi4CbXEn2ZhO/sGZ\nhu3r+dHaShqvmIPHsr2cetw8Y1SuEenbsUF5ZspdlP8GTcr/ulM0tDcakN0JlXlc\ni3eYfC9T38OyoUbixLE3W9hiy0/ZPIiSupFmo6U8iwKBgQCJP8Bw2Y25pRGv3EBQ\n7TOKDLiocHNJ1se4qYz8injP0XpQtMW2tumpd4zMH+TTAr+Jx+c7CmZILcUUDNj5\nnNwx12drqhpn736z86sCJZmODZLttypPoSdTvFgvvGAYLxvjWXfQTPivNICFACtV\nXRPsApHIJ3rHwiO4DuKgyvGdbA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ideaflow-project@sunny-mountain-331720.iam.gserviceaccount.com",
+  "client_id": "105373316319146437335",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ideaflow-project%40sunny-mountain-331720.iam.gserviceaccount.com"
+}
