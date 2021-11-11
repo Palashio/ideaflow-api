@@ -1,4 +1,3 @@
-json
 cv2
 django
 os
