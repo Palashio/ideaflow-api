@@ -11,7 +11,7 @@ import json
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]= "app_creds.json"
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 def merge_images(request):
     files = request.FILES.keys()
     #
