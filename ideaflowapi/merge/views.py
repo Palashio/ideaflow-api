@@ -32,18 +32,11 @@ def merge_images(request):
     img1 = cv2.imread(IMG_NAME_1)
     img2 = cv2.imread(IMG_NAME_1)
 
-    with io.open(IMG_NAME_1, 'rb') as image_file:
-        content_one = image_file.read()
-    with io.open(IMG_NAME_1, 'rb') as image_file:
-        content_two = image_file.read()
+    content_one = get_content(IMG_NAME_1)
+    content_two = get_content(IMG_NAME_1)
 
-    image_first = vision.Image(content=content_one)
-    response_first = client.text_detection(image=image_first)
-    img1_rotation = get_rotation(response_first)
-
-    image_second = vision.Image(content=content_two)
-    response_second = client.text_detection(image=image_second)
-    img2_rotation = get_rotation(response_second)
+    img1_rotation = process_rotation(content_one)
+    img2_rotation = process_rotation(content_two)
 
     img1 = process_image(img1, img1_rotation)
     img2 = process_image(img2, img2_rotation)
@@ -62,7 +55,6 @@ def merge_images(request):
 
     response = client.text_detection(image=image)
     texts = response.text_annotations
-    print(response)
 
     OCR_RESULTS = ""
     for text in texts:
@@ -111,5 +103,22 @@ def get_rotation(response):
             return 90
         else:
             return 180
+
+def get_content(name):
+    with io.open(name, 'rb') as image_file:
+        c = image_file.read()
+    return c
+
+def process_rotation(c):
+    client = vision.ImageAnnotatorClient()
+
+    image_first = vision.Image(content=c)
+    response_first = client.text_detection(image=image_first)
+    img1_rotation = get_rotation(response_first)
+
+    return img1_rotation
+
+
+
 
         
