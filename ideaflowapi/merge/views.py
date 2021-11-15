@@ -12,11 +12,11 @@ import numpy as np
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]= "app_creds.json"
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def merge_images(request):
     files = request.FILES.keys()
     data = request.data.keys()
-    #
+
     if 'one' not in files or 'two' not in files:
         return JsonResponse({"MESSAGE": "BOTH IMAGES NOT PROVIDED"})
 
@@ -28,31 +28,48 @@ def merge_images(request):
     default_storage.save(IMG_NAME_1, first_file)
     default_storage.save(IMG_NAME_1, second_file)
 
+    client = vision.ImageAnnotatorClient()
     img1 = cv2.imread(IMG_NAME_1)
     img2 = cv2.imread(IMG_NAME_1)
 
-    img1_rotation = get_rotation()
+    with io.open(IMG_NAME_1, 'rb') as image_file:
+        content_one = image_file.read()
+    with io.open(IMG_NAME_1, 'rb') as image_file:
+        content_two = image_file.read()
+
+    image_first = vision.Image(content=content_one)
+    response_first = client.text_detection(image=image_first)
+    img1_rotation = get_rotation(response_first)
+
+    image_second = vision.Image(content=content_two)
+    response_second = client.text_detection(image=image_second)
+    img2_rotation = get_rotation(response_second)
+
+    img1 = process_image(img1, img1_rotation)
+    img2 = process_image(img2, img2_rotation)
 
     if 'vertical' in data:
         im_v = cv2.hconcat([img1, img2])
+        cv2.imwrite('output.png', im_v)
     else:
         im_v = cv2.vconcat([img1, img2])
+        cv2.imwrite('output.png', im_v)
 
-    client = vision.ImageAnnotatorClient()
-
-    with io.open(IMG_NAME_1, 'rb') as image_file:
+    with io.open('output.png', 'rb') as image_file:
         content = image_file.read()
 
     image = vision.Image(content=content)
 
     response = client.text_detection(image=image)
     texts = response.text_annotations
+    print(response)
 
     OCR_RESULTS = ""
     for text in texts:
         OCR_RESULTS += str(text.description) + "\n"
 
     os.remove(IMG_NAME_1)
+    os.remove('output.png')
 
     return JsonResponse(json.dumps(OCR_RESULTS), safe=False, status=200)
 
