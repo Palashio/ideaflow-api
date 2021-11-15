@@ -1,6 +1,3 @@
-json
-cv2
+opencv-python
 django
-os
-io
-rest-framework
+djangorestframework
